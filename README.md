@@ -68,7 +68,9 @@
 	SETENV (NLS_LANG = "AMERICAN_AMERICA.ZHS16GBK")	
 	USERID userid, PASSWORD password	
 	EXTTRAIL ./dirdat/la	
-	dynamicresolution	
+	dynamicresolution
+	NOCOMPRESSUPDATES
+	GETUPDATEBEFORES	
 	table test001.*;
 	```
 
