@@ -31,8 +31,9 @@
 ## Oracle设置 ##
 - 源端的主机上需要装有数据库，笔者使用的Oracle11g，安装Oracle的过程就不再叙述
 - 开启归档模式
-
-    `SQL>alter database archivelog`
+```shell
+SQL>alter database archivelog
+```
 - 开启补充日志
 
     `SQL>alter database add supplement log data;`
@@ -40,9 +41,10 @@
 	
 ## 源端 ##
 - 初始化GGSCI
-
-    `$ ./ggsci`
-	`GGSCI > CREATE SUBDIRS`
+```shell
+$ ./ggsci
+GGSCI > CREATE SUBDIRS
+```
 - 添加需要被采集的表，笔者需要采集test001用户下所有的表
 
 	`GGSCI > DBLOGIN USERID goldengate, PASSWORD goldengate`
