@@ -30,7 +30,7 @@ $ ./ggsci
 GGSCI > QUIT
 ```
 * 查看GoldenGate状态
-  * 使用show命令
+
 ```
 GGSCI > SHOW  
 ```
@@ -58,7 +58,6 @@ Database Definitions (.def)    /aifs01/data/oggtest/dirdef
 
 ```
 * 查看信息
-  * 使用info命令
 ```
 GGSIC > INFO ALL
 ```
