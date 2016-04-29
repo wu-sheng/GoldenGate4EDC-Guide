@@ -12,15 +12,18 @@
 - 源端作为数据源，负责从数据库采集数据，生成Trails文件，并发送到目标端
 - 目标端作为终点，负责处理从源端传来的Trails文件，并将这些文件转换为文本文件
 - 结构图
+
 ### 源端 ###
 - 源端上装有Oracle和GoldenGate，GoldenGate将Oracle的数据采集并以事务为单位，写入本地Trails文件，并在远程的GoldenGate上生成新的Trails文件（目前只有DML操作）
 - manager：GoldenGate的监控进程，负责控制GoldenGate的其他组件
 - extract：从数据库的二进制日志中抽取变化到Trails文件
 - pump：从源端的Trails文件里抽取信息并推送到目标端的Trails文件
+
 ### 目标端 ###
 - 目标端上的GoldenGate将源端输送过来的GoldenGate文件以特定的规则，转换为特定格式的文本文件
 - manager：GoldenGate的监控进程，负责控制GoldenGate的其他组件
 - ffwriter：将本地的Trails文件读取并转换为文本文件
+
 ### 其他组件 ###
 - 组件全都位于GoldenGate的根目录下
 - ggsci：GoldenGate的控制台，可以通过这个操作GoldenGate的附属组件
