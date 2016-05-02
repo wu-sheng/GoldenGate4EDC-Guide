@@ -125,6 +125,18 @@ GGSCI > CREATE SUBDIRS
 GGSCI > DBLOGIN USERID goldengate, PASSWORD goldengate
 ```
 
+* 添加对指定表的事务监视，笔者添加的是test001用户下的所有表
+
+```
+GGSCI > ADD TRANDATA test001.*
+```
+
+* 如果想添加特定的表，可以用下面的语句，笔者尝试添加test001用户下的emp表
+
+```
+GGSCI > ADD TRANDATA test001.emp
+``` 
+
 * 编辑组件,输入如下命令，编辑对应组件的配置文件，文件名为：<组件名>.prm。各组件具体的配置已经在readme.md中展示，这里不再叙述。
 
 
