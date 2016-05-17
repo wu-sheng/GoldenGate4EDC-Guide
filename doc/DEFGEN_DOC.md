@@ -27,8 +27,14 @@ TABLE test001.*;
 ```shell
 $ ./defgen PARAMFILE ./dirprm/flatfile.prm
 ```
+* GoldenGate源端，将源端的组件关闭，并重新选择需要采集的表，笔者要采集test001模式下的表
 
-* 将生成的srcdef.def文件拷贝到目标端的dirdef目录下，并重启读取文件的EXTRACT组件，笔者的EXTRACT组件名为ffwriter
+```
+GGSCI > DBLOGIN USERID goldengate, PASSWORD goldengate
+GGSCI > ADD TRANDATA test001.*
+```
+
+* GoldenGate目标端，将生成的srcdef.def文件拷贝到目标端的dirdef目录下，并重启读取文件的EXTRACT组件，笔者的EXTRACT组件名为ffwriter
 
 ```shell
 GGSCI > STOP ffwriter
